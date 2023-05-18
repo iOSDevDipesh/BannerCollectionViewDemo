@@ -1,0 +1,16 @@
+PODS:
+  - ASPVideoPlayer (6.1.2)
+
+DEPENDENCIES:
+  - ASPVideoPlayer (= 6.1.2)
+
+SPEC REPOS:
+  trunk:
+    - ASPVideoPlayer
+
+SPEC CHECKSUMS:
+  ASPVideoPlayer: 70215f5b4cfbf33614548ee56a67290f640023d0
+
+PODFILE CHECKSUM: a65538dba0c861d0b525c79793b603035b3af0f1
+
+COCOAPODS: 1.11.3

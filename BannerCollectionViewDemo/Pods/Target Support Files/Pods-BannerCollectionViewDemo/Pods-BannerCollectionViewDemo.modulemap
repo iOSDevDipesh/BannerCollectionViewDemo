@@ -1,0 +1,6 @@
+framework module Pods_BannerCollectionViewDemo {
+  umbrella header "Pods-BannerCollectionViewDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
