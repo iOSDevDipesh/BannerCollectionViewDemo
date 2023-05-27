@@ -131,6 +131,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print("indexPath.row: \(indexPath.row)")
+        pageControll.currentPage = indexPath.row
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width - 30
         let height = collectionView.bounds.height
@@ -163,10 +168,36 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 // MARK: - UIScrollView delegate method
 
 extension ViewController: UIScrollViewDelegate {
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let threshold: CGFloat = 3.0
+        let xVelocity = velocity.x
+        
+        if abs(xVelocity) > threshold {
+            let pageWidth = collectionView.frame.size.width
+            let currentPage = Int(collectionView.contentOffset.x / pageWidth)
+            
+            if xVelocity > 0 {
+                // Swiping towards the right
+                if currentPage < collectionView.numberOfItems(inSection: 0) - 1 {
+                    pageControll.currentPage = currentPage + 1
+                    print("indexPath.row: \(currentPage + 1)")
+                }
+            } else {
+                // Swiping towards the left
+                if currentPage > 0 {
+                    pageControll.currentPage = currentPage - 1
+                    print("indexPath.row: \(currentPage - 1)")
+                }
+            }
+        }
+        
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageIndex = Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
-        self.pageControll.currentPage = pageIndex
-        self.playVideo(pageIndex: pageIndex)
-        print("PAGE INDEX scrollViewDidEndDecelerating: \(pageIndex)")
+        print("indexPath.row: \(pageIndex)")
+        pageControll.currentPage = pageIndex
+        playVideo(pageIndex: pageIndex)
     }
 }
