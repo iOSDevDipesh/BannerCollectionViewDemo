@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerRowCell" id="W5b-hV-4yN" customClass="BannerRowCell" customModule="BannerCollectionViewDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="615" height="262"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="615" height="262"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-sr-Qvh" customClass="SDAnimatedImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="615" height="262"/>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.12549019610000001" blue="0.2274509804" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-kW-brK" customClass="ASPVideoPlayerView" customModule="ASPVideoPlayer">
+                        <rect key="frame" x="0.0" y="0.0" width="615" height="262"/>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.12549019610000001" blue="0.2274509804" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KEs-4Y-RRi">
+                        <rect key="frame" x="297.66666666666669" y="121" width="20" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="color" name="ThemeColor_Blue"/>
+                    </activityIndicatorView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="3gh-75-MrY"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LCc-kW-brK" secondAttribute="trailing" id="1EV-nR-Lgu"/>
+                <constraint firstAttribute="trailing" secondItem="gFQ-sr-Qvh" secondAttribute="trailing" id="1LP-CY-4YS"/>
+                <constraint firstItem="gFQ-sr-Qvh" firstAttribute="leading" secondItem="W5b-hV-4yN" secondAttribute="leading" id="1mO-iH-MNf"/>
+                <constraint firstItem="LCc-kW-brK" firstAttribute="top" secondItem="W5b-hV-4yN" secondAttribute="top" id="B9R-Mg-8Pr"/>
+                <constraint firstAttribute="bottom" secondItem="gFQ-sr-Qvh" secondAttribute="bottom" id="OmF-2y-0eV"/>
+                <constraint firstItem="LCc-kW-brK" firstAttribute="leading" secondItem="W5b-hV-4yN" secondAttribute="leading" id="VcO-69-ugD"/>
+                <constraint firstAttribute="bottom" secondItem="LCc-kW-brK" secondAttribute="bottom" id="bJb-kv-Xow"/>
+                <constraint firstItem="gFQ-sr-Qvh" firstAttribute="top" secondItem="W5b-hV-4yN" secondAttribute="top" id="d92-Sz-K9Y"/>
+                <constraint firstItem="KEs-4Y-RRi" firstAttribute="centerY" secondItem="gFQ-sr-Qvh" secondAttribute="centerY" id="ieM-Ix-445"/>
+                <constraint firstItem="KEs-4Y-RRi" firstAttribute="centerX" secondItem="gFQ-sr-Qvh" secondAttribute="centerX" id="mkF-Zd-XEz"/>
+            </constraints>
+            <size key="customSize" width="615" height="262"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="16"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="activityIndi" destination="KEs-4Y-RRi" id="KBs-JS-834"/>
+                <outlet property="imgView" destination="gFQ-sr-Qvh" id="YUF-S0-2Zi"/>
+                <outlet property="view_videoPlayer" destination="LCc-kW-brK" id="jTW-gk-FS0"/>
+            </connections>
+            <point key="canvasLocation" x="347" y="22"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="ThemeColor_Blue">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

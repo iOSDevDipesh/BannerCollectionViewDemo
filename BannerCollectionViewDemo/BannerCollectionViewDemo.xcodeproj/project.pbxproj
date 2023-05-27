@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		70B25510E078CFC51BAB867C /* Pods_BannerCollectionViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F25411B3F1B361CF25C27C7 /* Pods_BannerCollectionViewDemo.framework */; };
+		F959FA3C2A161125008637B5 /* BannerRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959FA3A2A161125008637B5 /* BannerRowCell.swift */; };
+		F959FA3D2A161125008637B5 /* BannerRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F959FA3B2A161125008637B5 /* BannerRowCell.xib */; };
+		F959FA402A1611B4008637B5 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F959FA3F2A1611B4008637B5 /* SDWebImage */; };
+		F959FA442A16216A008637B5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F959FA432A16216A008637B5 /* UIView+Extension.swift */; };
 		F9B3E6C62A160B52002AEB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3E6C52A160B52002AEB60 /* AppDelegate.swift */; };
 		F9B3E6C82A160B52002AEB60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3E6C72A160B52002AEB60 /* SceneDelegate.swift */; };
 		F9B3E6CA2A160B52002AEB60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B3E6C92A160B52002AEB60 /* ViewController.swift */; };
@@ -20,6 +24,9 @@
 		3F25411B3F1B361CF25C27C7 /* Pods_BannerCollectionViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BannerCollectionViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68076D36F642FED0E01F5238 /* Pods-BannerCollectionViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerCollectionViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-BannerCollectionViewDemo/Pods-BannerCollectionViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6AB0C2493EC4C53A3C044E5C /* Pods-BannerCollectionViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerCollectionViewDemo.release.xcconfig"; path = "Target Support Files/Pods-BannerCollectionViewDemo/Pods-BannerCollectionViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F959FA3A2A161125008637B5 /* BannerRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerRowCell.swift; sourceTree = "<group>"; };
+		F959FA3B2A161125008637B5 /* BannerRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerRowCell.xib; sourceTree = "<group>"; };
+		F959FA432A16216A008637B5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F9B3E6C22A160B52002AEB60 /* BannerCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BannerCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B3E6C52A160B52002AEB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9B3E6C72A160B52002AEB60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F959FA402A1611B4008637B5 /* SDWebImage in Frameworks */,
 				70B25510E078CFC51BAB867C /* Pods_BannerCollectionViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,8 +64,32 @@
 				68076D36F642FED0E01F5238 /* Pods-BannerCollectionViewDemo.debug.xcconfig */,
 				6AB0C2493EC4C53A3C044E5C /* Pods-BannerCollectionViewDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F959FA392A1610DF008637B5 /* Cell-Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				F959FA3A2A161125008637B5 /* BannerRowCell.swift */,
+				F959FA3B2A161125008637B5 /* BannerRowCell.xib */,
+			);
+			path = "Cell-Nibs";
+			sourceTree = "<group>";
+		};
+		F959FA412A1620E0008637B5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F959FA422A16215C008637B5 /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F959FA422A16215C008637B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F959FA432A16216A008637B5 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F9B3E6B92A160B52002AEB60 = {
@@ -82,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				F9B3E6D92A160C30002AEB60 /* App */,
-				F9B3E6DE2A160C76002AEB60 /* Resources */,
+				F959FA412A1620E0008637B5 /* Helper */,
 				F9B3E6DA2A160C3E002AEB60 /* ViewController */,
 				F9B3E6DB2A160C4C002AEB60 /* Storyboard */,
 				F9B3E6DD2A160C69002AEB60 /* LaunchScreen */,
@@ -104,6 +136,7 @@
 		F9B3E6DA2A160C3E002AEB60 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F959FA392A1610DF008637B5 /* Cell-Nibs */,
 				F9B3E6C92A160B52002AEB60 /* ViewController.swift */,
 			);
 			path = ViewController;
@@ -133,13 +166,6 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
-		F9B3E6DE2A160C76002AEB60 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,6 +184,9 @@
 			dependencies = (
 			);
 			name = BannerCollectionViewDemo;
+			packageProductDependencies = (
+				F959FA3F2A1611B4008637B5 /* SDWebImage */,
+			);
 			productName = BannerCollectionViewDemo;
 			productReference = F9B3E6C22A160B52002AEB60 /* BannerCollectionViewDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +215,9 @@
 				Base,
 			);
 			mainGroup = F9B3E6B92A160B52002AEB60;
+			packageReferences = (
+				F959FA3E2A1611B4008637B5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = F9B3E6C32A160B52002AEB60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F959FA3D2A161125008637B5 /* BannerRowCell.xib in Resources */,
 				F9B3E6D22A160B56002AEB60 /* LaunchScreen.storyboard in Resources */,
 				F9B3E6CF2A160B56002AEB60 /* Assets.xcassets in Resources */,
 				F9B3E6CD2A160B52002AEB60 /* Main.storyboard in Resources */,
@@ -255,8 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F959FA3C2A161125008637B5 /* BannerRowCell.swift in Sources */,
 				F9B3E6CA2A160B52002AEB60 /* ViewController.swift in Sources */,
 				F9B3E6C62A160B52002AEB60 /* AppDelegate.swift in Sources */,
+				F959FA442A16216A008637B5 /* UIView+Extension.swift in Sources */,
 				F9B3E6C82A160B52002AEB60 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +512,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F959FA3E2A1611B4008637B5 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F959FA3F2A1611B4008637B5 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F959FA3E2A1611B4008637B5 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9B3E6BA2A160B52002AEB60 /* Project object */;
 }
